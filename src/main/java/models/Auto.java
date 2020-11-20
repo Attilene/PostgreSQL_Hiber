@@ -24,5 +24,27 @@ public class Auto {
         this.color = color;
     }
 
+    public int getId() { return id; }
 
+    public String getModel() { return model; }
+
+    public String getColor() { return color; }
+
+    public User getUser() { return user; }
+
+    public void setModel(String model) { this.model = model; }
+
+    public void setColor(String color) { this.color = color; }
+
+    public void setUser(User user) { this.user = user; }
+
+    @Override
+    public String toString() {
+        return "Auto{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }
