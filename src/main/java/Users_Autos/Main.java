@@ -1,7 +1,9 @@
-import models.Auto;
-import models.User;
-import service.AutoService;
-import service.UserService;
+package Users_Autos;
+
+import Users_Autos.models.Auto;
+import Users_Autos.models.User;
+import Users_Autos.service.AutoService;
+import Users_Autos.service.UserService;
 
 public class Main {
     public static void main(String[] args) {

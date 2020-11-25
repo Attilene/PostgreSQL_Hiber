@@ -1,7 +1,7 @@
-package utils;
+package Users_Autos.utils;
 
-import models.Auto;
-import models.User;
+import Users_Autos.models.Auto;
+import Users_Autos.models.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

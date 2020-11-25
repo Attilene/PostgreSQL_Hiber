@@ -1,39 +1,39 @@
-package dao;
+package Users_Autos.dao;
 
-import models.Auto;
-import models.User;
+import Users_Autos.models.Auto;
+import Users_Autos.models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import utils.HibernateSessionFactoryUtil;
+import Users_Autos.utils.HibernateSessionFactoryUtil;
 
 import java.util.List;
 
-public class UserDao {
+public class AutoDao {
 
     public User findUserById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
     }
 
-    public void save(User user) {
+    public void save(Auto auto) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(user);
+        session.save(auto);
         tx1.commit();
         session.close();
     }
 
-    public void update(User user) {
+    public void update(Auto auto) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(user);
+        session.update(auto);
         tx1.commit();
         session.close();
     }
 
-    public void delete(User user) {
+    public void delete(Auto auto) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(user);
+        session.delete(auto);
         tx1.commit();
         session.close();
     }
@@ -42,10 +42,8 @@ public class UserDao {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
     }
 
-    public List<User> findAll() {
+    public List<Auto> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        List<User> users = (List<User>) session.createQuery("From User").list();
-        session.close();
-        return users;
+        return (List<Auto>) session.createQuery("From Auto").list();
     }
 }

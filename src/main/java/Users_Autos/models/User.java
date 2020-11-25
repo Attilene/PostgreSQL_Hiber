@@ -1,4 +1,4 @@
-package models;
+package Users_Autos.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
