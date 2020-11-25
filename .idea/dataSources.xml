@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5555/users_auto</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="tests@localhost" uuid="d4c47b90-b6ea-48b7-98d2-8c9c3b4c0bc8">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5555/tests</jdbc-url>
+    </data-source>
   </component>
 </project>

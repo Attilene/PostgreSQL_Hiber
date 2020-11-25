@@ -1,8 +1,8 @@
-package service;
+package Users_Autos.service;
 
-import dao.AutoDao;
-import models.Auto;
-import models.User;
+import Users_Autos.dao.AutoDao;
+import Users_Autos.models.Auto;
+import Users_Autos.models.User;
 
 import java.util.List;
 
