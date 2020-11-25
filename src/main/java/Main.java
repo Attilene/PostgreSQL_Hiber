@@ -21,6 +21,7 @@ public class Main {
 //        autoService.saveAuto(nissan);
         nissan.setColor("blue");
         autoService.updateAuto(nissan);
+        System.out.println(autoService.findUser(lamborghini.getUser().getId()).getName());
 //        userService.updateUser(user);
 //        user.setName("Dmitriy");
 //        userService.updateUser(user);
