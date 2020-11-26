@@ -2,7 +2,6 @@ package Tests.service;
 
 import Tests.dao.AnswerDao;
 import Tests.models.Answer;
-import Tests.models.Question;
 
 import java.util.List;
 
@@ -10,8 +9,6 @@ public class AnswerService {
     private final AnswerDao answerDao = new AnswerDao();
 
     public AnswerService() {}
-
-    public Question findQuestion(int id) { return answerDao.findQuestionById(id); }
 
     public void saveAnswer(Answer answer) { answerDao.save(answer); }
 

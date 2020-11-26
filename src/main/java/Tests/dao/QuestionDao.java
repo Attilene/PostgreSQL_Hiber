@@ -1,6 +1,5 @@
 package Tests.dao;
 
-import Tests.models.Answer;
 import Tests.models.Question;
 import Tests.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
@@ -11,10 +10,6 @@ import java.util.List;
 public class QuestionDao {
     public Question findQuestionById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Question.class, id);
-    }
-
-    public Answer findAnswerById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Answer.class, id);
     }
 
     public void save(Question question) {

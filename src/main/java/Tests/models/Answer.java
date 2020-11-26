@@ -1,8 +1,6 @@
 package Tests.models;
 
 
-import Users_Autos.models.User;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +19,7 @@ public class Answer {
     private Question question;
 
     @OneToMany(mappedBy = "answer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Student_Answer> student_answers;
+    private List<StudentAnswer> student_answers;
 
     public Answer() {}
 
@@ -37,7 +35,7 @@ public class Answer {
 
     public Question getQuestion() { return question; }
 
-    public List<Student_Answer> getStudent_answers() { return student_answers; }
+    public List<StudentAnswer> getStudent_answers() { return student_answers; }
 
     public void setText(String text) { this.text = text; }
 
@@ -45,14 +43,14 @@ public class Answer {
 
     public void setQuestion(Question question) { this.question = question; }
 
-    public void setStudent_answers(List<Student_Answer> student_answers) { this.student_answers = student_answers; }
+    public void setStudent_answers(List<StudentAnswer> student_answers) { this.student_answers = student_answers; }
 
-    public void addStudent_Answer(Student_Answer student_answer) {
+    public void addStudent_Answer(StudentAnswer student_answer) {
         student_answer.setAnswer(this);
         student_answers.add(student_answer);
     }
 
-    public void removeStudentAnswer(Student_Answer student_answer) { student_answers.remove(student_answer); }
+    public void removeStudentAnswer(StudentAnswer student_answer) { student_answers.remove(student_answer); }
 
     @Override
     public String toString() {

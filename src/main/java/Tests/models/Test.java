@@ -15,7 +15,7 @@ public class Test {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
-    private Test_List test_list;
+    private TestList test_list;
 
     public Test() {}
 
@@ -23,11 +23,11 @@ public class Test {
 
     public Question getQuestion() { return question; }
 
-    public Test_List getTest_list() { return test_list; }
+    public TestList getTest_list() { return test_list; }
 
     public void setQuestion(Question question) { this.question = question; }
 
-    public void setTest_list(Test_List test_list) { this.test_list = test_list; }
+    public void setTest_list(TestList test_list) { this.test_list = test_list; }
 
     @Override
     public String toString() {

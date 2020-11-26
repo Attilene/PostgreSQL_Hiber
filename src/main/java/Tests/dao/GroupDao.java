@@ -1,43 +1,43 @@
 package Tests.dao;
 
-import Tests.models.Answer;
+import Tests.models.Group;
 import Tests.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class AnswerDao {
-    public Answer findAnswerById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Answer.class, id);
+public class GroupDao {
+    public Group findGroupById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Group.class, id);
     }
 
-    public void save(Answer answer) {
+    public void save(Group group) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(answer);
+        session.save(group);
         tx1.commit();
         session.close();
     }
 
-    public void update(Answer answer) {
+    public void update(Group group) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(answer);
+        session.update(group);
         tx1.commit();
         session.close();
     }
 
-    public void delete(Answer answer) {
+    public void delete(Group group) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(answer);
+        session.delete(group);
         tx1.commit();
         session.close();
     }
 
-    public List<Answer> findAll() {
+    public List<Group> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        return (List<Answer>) session.createQuery("From Answer").list();
+        return (List<Group>) session.createQuery("From Group").list();
     }
 }

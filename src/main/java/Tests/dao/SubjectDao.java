@@ -1,43 +1,43 @@
 package Tests.dao;
 
-import Tests.models.Answer;
+import Tests.models.Subject;
 import Tests.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class AnswerDao {
-    public Answer findAnswerById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Answer.class, id);
+public class SubjectDao {
+    public Subject findSubjectById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Subject.class, id);
     }
 
-    public void save(Answer answer) {
+    public void save(Subject subject) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(answer);
+        session.save(subject);
         tx1.commit();
         session.close();
     }
 
-    public void update(Answer answer) {
+    public void update(Subject subject) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(answer);
+        session.update(subject);
         tx1.commit();
         session.close();
     }
 
-    public void delete(Answer answer) {
+    public void delete(Subject subject) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(answer);
+        session.delete(subject);
         tx1.commit();
         session.close();
     }
 
-    public List<Answer> findAll() {
+    public List<Subject> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        return (List<Answer>) session.createQuery("From Answer").list();
+        return (List<Subject>) session.createQuery("From Subject").list();
     }
 }

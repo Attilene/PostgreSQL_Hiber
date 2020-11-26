@@ -1,43 +1,43 @@
 package Tests.dao;
 
-import Tests.models.Answer;
+import Tests.models.StudentAnswer;
 import Tests.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class AnswerDao {
-    public Answer findAnswerById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Answer.class, id);
+public class StudentAnswerDao {
+    public StudentAnswer findStudentAnswerById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(StudentAnswer.class, id);
     }
 
-    public void save(Answer answer) {
+    public void save(StudentAnswer studentAnswer) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(answer);
+        session.save(studentAnswer);
         tx1.commit();
         session.close();
     }
 
-    public void update(Answer answer) {
+    public void update(StudentAnswer studentAnswer) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(answer);
+        session.update(studentAnswer);
         tx1.commit();
         session.close();
     }
 
-    public void delete(Answer answer) {
+    public void delete(StudentAnswer studentAnswer) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(answer);
+        session.delete(studentAnswer);
         tx1.commit();
         session.close();
     }
 
-    public List<Answer> findAll() {
+    public List<StudentAnswer> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        return (List<Answer>) session.createQuery("From Answer").list();
+        return (List<StudentAnswer>) session.createQuery("From StudentAnswer").list();
     }
 }

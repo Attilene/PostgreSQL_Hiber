@@ -1,43 +1,43 @@
 package Tests.dao;
 
-import Tests.models.Answer;
+import Tests.models.Schedule;
 import Tests.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class AnswerDao {
-    public Answer findAnswerById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Answer.class, id);
+public class ScheduleDao {
+    public Schedule findScheduleById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Schedule.class, id);
     }
 
-    public void save(Answer answer) {
+    public void save(Schedule schedule) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(answer);
+        session.save(schedule);
         tx1.commit();
         session.close();
     }
 
-    public void update(Answer answer) {
+    public void update(Schedule schedule) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(answer);
+        session.update(schedule);
         tx1.commit();
         session.close();
     }
 
-    public void delete(Answer answer) {
+    public void delete(Schedule schedule) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(answer);
+        session.delete(schedule);
         tx1.commit();
         session.close();
     }
 
-    public List<Answer> findAll() {
+    public List<Schedule> findAll() {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        return (List<Answer>) session.createQuery("From Answer").list();
+        return (List<Schedule>) session.createQuery("From Schedule").list();
     }
 }

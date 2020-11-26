@@ -19,7 +19,7 @@ public class Schedule {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
-    private Test_List test_list;
+    private TestList test_list;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
@@ -53,7 +53,7 @@ public class Schedule {
 
     public int getDuration() { return duration; }
 
-    public Test_List getTest_list() { return test_list; }
+    public TestList getTest_list() { return test_list; }
 
     public Time getEnd_time() { return end_time; }
 
@@ -61,7 +61,7 @@ public class Schedule {
 
     public void setGroup(Group group) { this.group = group; }
 
-    public void setTest_list(Test_List test_list) { this.test_list = test_list; }
+    public void setTest_list(TestList test_list) { this.test_list = test_list; }
 
     public void setActive(boolean active) { this.active = active; }
 

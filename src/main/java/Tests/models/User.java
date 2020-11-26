@@ -26,10 +26,10 @@ public class User {
     private Role role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Test_List> test_lists;
+    private List<TestList> test_lists;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Student_Answer> student_answers;
+    private List<StudentAnswer> student_answers;
 
     public User() {}
 
@@ -65,9 +65,9 @@ public class User {
 
     public Role getRole() { return role; }
 
-    public List<Test_List> getTest_lists() { return test_lists; }
+    public List<TestList> getTest_lists() { return test_lists; }
 
-    public List<Student_Answer> getStudent_answers() { return student_answers; }
+    public List<StudentAnswer> getStudent_answers() { return student_answers; }
 
     public void setFirst_name(String first_name) { this.first_name = first_name; }
 
@@ -83,23 +83,23 @@ public class User {
 
     public void setRole(Role role) { this.role = role; }
 
-    public void setTest_lists(List<Test_List> test_lists) { this.test_lists = test_lists; }
+    public void setTest_lists(List<TestList> test_lists) { this.test_lists = test_lists; }
 
-    public void setStudent_answers(List<Student_Answer> student_answers) { this.student_answers = student_answers; }
+    public void setStudent_answers(List<StudentAnswer> student_answers) { this.student_answers = student_answers; }
 
-    public void addTest_list(Test_List test_list) {
+    public void addTest_list(TestList test_list) {
         test_list.setUser(this);
         test_lists.add(test_list);
     }
 
-    public void addStudent_Answer(Student_Answer student_answer) {
+    public void addStudent_Answer(StudentAnswer student_answer) {
         student_answer.setUser(this);
         student_answers.add(student_answer);
     }
 
-    public void removeTest_list(Test_List test_list) { test_lists.remove(test_list); }
+    public void removeTest_list(TestList test_list) { test_lists.remove(test_list); }
 
-    public void removeStudent_Answer(Student_Answer student_answer) { student_answers.remove(student_answer); }
+    public void removeStudent_Answer(StudentAnswer student_answer) { student_answers.remove(student_answer); }
 
     @Override
     public String toString() {
