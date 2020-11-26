@@ -33,8 +33,8 @@ public class Test {
     public String toString() {
         return "Test{" +
                 "row_id=" + row_id +
-                ", question=" + question +
-                ", test_list=" + test_list +
+                ", question=" + question.getRow_id() +
+                ", test_list=" + test_list.getRow_id() +
                 '}';
     }
 }

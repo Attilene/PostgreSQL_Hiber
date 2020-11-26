@@ -1,16 +1,24 @@
 package Tests;
 
-import Tests.models.Question;
-import Tests.service.AnswerService;
-import Tests.service.QuestionService;
+import Tests.models.Group;
+import Tests.models.Schedule;
+import Tests.models.User;
+import Tests.service.GroupService;
+import Tests.service.ScheduleService;
+import Tests.service.UserService;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        QuestionService questionService = new QuestionService();
-        AnswerService answerService = new AnswerService();
-//        List<Question> questions = questionService.findAllQuestions();
-//        System.out.println(questions.toString());
+        UserService userService = new UserService();
+        ScheduleService scheduleService = new ScheduleService();
+        GroupService groupService = new GroupService();
+//        User user = userService.findUser(1);
+//        System.out.println(user.getLogin());
+        for (Group group: groupService.findAllGroups())
+            System.out.println(group.getName());
+        for (Schedule schedule: scheduleService.findAllSchedules())
+            System.out.println(schedule);
     }
 }

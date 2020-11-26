@@ -90,8 +90,8 @@ public class TestList {
         return "Test_List{" +
                 "row_id=" + row_id +
                 ", name='" + name + '\'' +
-                ", subject=" + subject +
-                ", teacher=" + teacher +
+                ", subject=" + subject.getRow_id() +
+                ", teacher=" + teacher.getRow_id() +
                 ", schedules=" + schedules +
                 ", tests=" + tests +
                 ", student_answers=" + student_answers +

@@ -58,7 +58,7 @@ public class Answer {
                 "row_id=" + row_id +
                 ", text='" + text + '\'' +
                 ", correct=" + correct +
-                ", question=" + question +
+                ", question=" + question.getRow_id() +
                 ", student_answers=" + student_answers +
                 '}';
     }

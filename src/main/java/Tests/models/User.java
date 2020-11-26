@@ -7,7 +7,6 @@ import java.util.List;
 @Entity
 @Table(name = "user")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int row_id;
@@ -25,7 +24,7 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "teacher", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TestList> test_lists;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -110,8 +109,8 @@ public class User {
                 ", middle_name='" + middle_name + '\'' +
                 ", login='" + login + '\'' +
                 ", password_hash='" + password_hash + '\'' +
-                ", group=" + group +
-                ", role=" + role +
+                ", group=" + group.getRow_id() +
+                ", role=" + role.getRow_id() +
                 ", test_lists=" + test_lists +
                 ", student_answers=" + student_answers +
                 '}';

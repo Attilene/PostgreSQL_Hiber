@@ -41,9 +41,9 @@ public class StudentAnswer {
     public String toString() {
         return "Student_Answer{" +
                 "row_id=" + row_id +
-                ", test_list=" + test_list +
-                ", answer=" + answer +
-                ", user=" + user +
+                ", test_list=" + test_list.getRow_id() +
+                ", answer=" + answer.getRow_id() +
+                ", user=" + user.getRow_id() +
                 '}';
     }
 }

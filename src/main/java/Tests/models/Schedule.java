@@ -85,8 +85,8 @@ public class Schedule {
                 ", end_dt=" + end_dt +
                 ", end_time=" + end_time +
                 ", active=" + active +
-                ", test_list=" + test_list +
-                ", group=" + group +
+                ", test_list=" + test_list.getRow_id() +
+                ", group=" + group.getRow_id() +
                 '}';
     }
 }
