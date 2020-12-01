@@ -13,7 +13,7 @@ public class HibernateSessionFactoryUtil {
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
-                Configuration configuration = new Configuration().configure();
+                Configuration configuration = new Configuration().configure("tests.cfg.xml");
                 configuration.addAnnotatedClass(Answer.class);
                 configuration.addAnnotatedClass(Group.class);
                 configuration.addAnnotatedClass(Question.class);
