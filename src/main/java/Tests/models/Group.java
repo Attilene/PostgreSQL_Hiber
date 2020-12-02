@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "group")
+@Table(name = "groups")
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int row_id;
     private String name;
-    private int year;
-    private int semester;
+    private Integer year;
+    private Integer semester;
 
     @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
     private List<User> users;
@@ -22,14 +22,14 @@ public class Group {
 
     public Group() {}
 
-    public Group(String name, int year) {
+    public Group(String name, Integer year) {
         this.name = name;
         this.year = year;
         this.users = new ArrayList<>();
         this.schedules = new ArrayList<>();
     }
 
-    public Group(String name, int year, int semester) {
+    public Group(String name, Integer year, Integer semester) {
         this.name = name;
         this.year = year;
         this.semester = semester;
@@ -41,9 +41,9 @@ public class Group {
 
     public String getName() { return name; }
 
-    public int getYear() { return year; }
+    public Integer getYear() { return year; }
 
-    public int getSemester() { return semester; }
+    public Integer getSemester() { return semester; }
 
     public List<Schedule> getSchedules() { return schedules; }
 
@@ -51,9 +51,9 @@ public class Group {
 
     public void setName(String name) { this.name = name; }
 
-    public void setYear(int year) { this.year = year; }
+    public void setYear(Integer year) { this.year = year; }
 
-    public void setSemester(int semester) { this.semester = semester; }
+    public void setSemester(Integer semester) { this.semester = semester; }
 
     public void setSchedules(List<Schedule> schedules) { this.schedules = schedules; }
 

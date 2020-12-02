@@ -5,14 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "question")
+@Table(name = "questions")
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int row_id;
     private String text;
-    private int score;
-    private boolean active;
+    private Integer score;
+    private Boolean active;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Answer> answers;
@@ -22,7 +22,7 @@ public class Question {
 
     public Question() {}
 
-    public Question(String text, int score, boolean active) {
+    public Question(String text, Integer score, Boolean active) {
         this.text = text;
         this.active = active;
         this.score = score;
@@ -34,7 +34,9 @@ public class Question {
 
     public int getRow_id() { return row_id; }
 
-    public int getScore() { return score; }
+    public Integer getScore() { return score; }
+
+    public Boolean getActive() { return active; }
 
     public List<Answer> getAnswers() { return answers; }
 
@@ -42,9 +44,9 @@ public class Question {
 
     public void setText(String text) { this.text = text; }
 
-    public void setScore(int score) { this.score = score; }
+    public void setScore(Integer score) { this.score = score; }
 
-    public void setActive(boolean active) { this.active = active; }
+    public void setActive(Boolean active) { this.active = active; }
 
     public void setAnswers(List<Answer> answers) { this.answers = answers; }
 

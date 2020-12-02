@@ -3,7 +3,7 @@ package Tests.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "student_answer")
+@Table(name = "student_answers")
 public class StudentAnswer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

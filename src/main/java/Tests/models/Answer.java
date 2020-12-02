@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "answer")
+@Table(name = "answers")
 public class Answer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int row_id;
     private String text;
-    private boolean correct;
+    private Boolean correct;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id")
@@ -23,7 +23,7 @@ public class Answer {
 
     public Answer() {}
 
-    public Answer(String text, boolean correct) {
+    public Answer(String text, Boolean correct) {
         this.text = text;
         this.correct = correct;
         this.student_answers = new ArrayList<>();
@@ -33,13 +33,15 @@ public class Answer {
 
     public String getText() { return text; }
 
+    public Boolean getCorrect() { return correct; }
+
     public Question getQuestion() { return question; }
 
     public List<StudentAnswer> getStudent_answers() { return student_answers; }
 
     public void setText(String text) { this.text = text; }
 
-    public void setCorrect(boolean correct) { this.correct = correct; }
+    public void setCorrect(Boolean correct) { this.correct = correct; }
 
     public void setQuestion(Question question) { this.question = question; }
 

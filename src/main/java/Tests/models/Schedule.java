@@ -5,17 +5,17 @@ import java.sql.Date;
 import java.sql.Time;
 
 @Entity
-@Table(name = "schedule")
+@Table(name = "schedules")
 public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int row_id;
-    private int duration;
+    private Integer duration;
     private Date start_dt;
     private Time start_time;
     private Date end_dt;
     private Time end_time;
-    private boolean active;
+    private Boolean active;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
@@ -28,12 +28,12 @@ public class Schedule {
     public Schedule() {}
 
     public Schedule(
-            int duration,
+            Integer duration,
             Date start_dt,
             Time start_time,
             Date end_dt,
             Time end_time,
-            boolean active
+            Boolean active
     ) {
         this.duration = duration;
         this.start_dt = start_dt;
@@ -51,7 +51,7 @@ public class Schedule {
 
     public Date getStart_dt() { return start_dt; }
 
-    public int getDuration() { return duration; }
+    public Integer getDuration() { return duration; }
 
     public TestList getTest_list() { return test_list; }
 
@@ -63,9 +63,9 @@ public class Schedule {
 
     public void setTest_list(TestList test_list) { this.test_list = test_list; }
 
-    public void setActive(boolean active) { this.active = active; }
+    public void setActive(Boolean active) { this.active = active; }
 
-    public void setDuration(int duration) { this.duration = duration; }
+    public void setDuration(Integer duration) { this.duration = duration; }
 
     public void setEnd_dt(Date end_dt) { this.end_dt = end_dt; }
 
